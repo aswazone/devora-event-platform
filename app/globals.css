@@ -4,12 +4,12 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --color-violet: #c494ff;
+  --color-violet: #491b8f;
   --color-light-100: #e7f2ff;
   --color-light-200: #bdbdbd;
-  --color-border-dark: #151024;
-  --color-dark-100: #130d1a;
-  --color-dark-200: #241830;
+  --color-border-dark: #221335;
+  --color-dark-100: #160b22;
+  --color-dark-200: #1e1129;
   --radius: 0.625rem;
   --background: #030708;
   --foreground: #ffffff;
@@ -151,7 +151,7 @@
     @apply glass sticky top-0 z-50;
 
     nav {
-      @apply flex flex-row justify-between mx-auto container sm:px-10 px-5 py-4;
+      @apply flex flex-row justify-between mx-auto container sm:px-10 px-5 py-2;
     }
 
     .logo {
@@ -163,7 +163,7 @@
     }
 
     ul {
-      @apply flex flex-row items-center gap-6;
+      @apply flex flex-row items-center gap-6 bg-gradient-to-b from-yellow-800 via-yellow-100 to-yellow-400 bg-clip-text font-semibold text-transparent;
     }
   }
 
