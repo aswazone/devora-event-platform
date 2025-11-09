@@ -128,7 +128,7 @@
   }
 
   ul {
-    @apply list-disc list-inside;
+    @apply list-none list-inside;
   }
 }
 
@@ -151,7 +151,7 @@
     @apply glass sticky top-0 z-50;
 
     nav {
-      @apply flex flex-row justify-between mx-auto container sm:px-10 px-5 py-2;
+      @apply flex flex-row justify-between mx-auto container sm:px-10 px-5 py-3;
     }
 
     .logo {
