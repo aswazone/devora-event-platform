@@ -7,9 +7,10 @@ interface MongooseConnection {
 }
 
 // Extend the global namespace to include our cached connection
+// Use a uniquely named global slot to avoid colliding with the imported `mongoose`
 declare global {
   // eslint-disable-next-line no-var
-  var mongoose: MongooseConnection | undefined;
+  var __mongooseCache: MongooseConnection | undefined;
 }
 
 // Get MongoDB URI from environment variables
@@ -22,14 +23,14 @@ if (!MONGODB_URI) {
 }
 
 // Initialize the cached connection object
-let cached: MongooseConnection = global.mongoose || {
+let cached: MongooseConnection = globalThis.__mongooseCache || {
   conn: null,
   promise: null,
 };
 
 // Cache the connection globally to prevent multiple connections in development
-if (!global.mongoose) {
-  global.mongoose = cached;
+if (!globalThis.__mongooseCache) {
+  globalThis.__mongooseCache = cached;
 }
 
 /**
